@@ -1,31 +1,20 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 5: Linked List
-======
+ ##  Documentation
+This app creates several linked lists via a constructor function and tests addition, deletion, and find functionality to ensure that correct information is passed through the constructor.
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+## Linked List Class
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any additional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc.json** - contains the course linter configuration
-* **.eslintignore** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-* **model/** - contains module definitions
-* **\_\_test\_\_/** - contains test modules
+The linked list Class uses syntactic sugar to declare a function called LinkedList which establishes properties for this.value and this.next.
 
-## Feature Tasks  
-#### Doubly Linked List
-* Given the LinkedList class presented during lecture, add a`find(value)` method that returns a node (if present) that corresponds to a particular value.
-  * You can assume that the linked list won't have duplicate values
+## Append function
 
-## Tests
-Unit test each method of your class. 
+My append function throws a type error should the new node not be an instance of a linked list, then checks to see if there is a next node, for which it determines there is no list and it makes the current node the only one.  Lastly, it will append to the next node if there is a next and return the resulting linked list.
 
-## Documentation
-In your README.md describe the exported values of each module you have defined. Every function description should include it's arity (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to write any additional information in your README.md.
+## Find function
 
+My find function first looks to see if this.next is null AND this.value does not equal the value passed to the function, then it will `return null`.  Or else, it will keep moving recursively to find the value on following results until it iterates through the entire linked list where it will `return this`.
+
+## Remove function
+
+My remove function first looks to see if this.next is nonexistent, which would imply that there is only one node, which will `return this`.  If it finds that `this.next === node`, it will make `this.next` into `this.next.next`, effectively removing the connection between those two nodes.  It will continue to move through the linked list until it finds that node.
+
+## ##
